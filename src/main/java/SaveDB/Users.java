@@ -31,7 +31,8 @@ import javax.persistence.Table;
     @NamedQuery(name = "Users.findById", query = "SELECT u FROM Users u WHERE u.id = :id"),
     @NamedQuery(name = "Users.findByUserName", query = "SELECT u FROM Users u WHERE u.userName = :userName"),
     @NamedQuery(name = "Users.findByEmail", query = "SELECT u FROM Users u WHERE u.email = :email"),
-    @NamedQuery(name = "Users.findByIsDeleted", query = "SELECT u FROM Users u WHERE u.isDeleted = :isDeleted")})
+    @NamedQuery(name = "Users.findByIsDeleted", query = "SELECT u FROM Users u WHERE u.isDeleted = :isDeleted"),
+    @NamedQuery(name = "Users.findIfUserNameOREmailExists", query = "SELECT u FROM Users u WHERE u.userName = :userName OR u.email = :email")})
 public class Users implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -151,5 +152,5 @@ public class Users implements Serializable {
     public String toString() {
         return "SaveDB.Users[ id=" + id + " ]";
     }
-    
+
 }

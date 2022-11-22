@@ -1,13 +1,13 @@
 
 import SaveDB.CallStoredProcedures;
 import java.io.IOException;
+import login.SignUp;
 import org.json.JSONObject;
 
 public class test {
 
     public static void main(String[] args) {
-
-        try {
+   /*     try {
             
 
            JSONObject obj = new JSONObject();
@@ -19,17 +19,19 @@ public class test {
 //            String tokenToSend = jsonToken.optString("token");
 //            System.out.println(tokenToSend);
 
-            String o = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInZlaGljbGVOdW1iZXIiOjEyMzQ1NiwidXNlck5hbWUiOiJEYW5pZWwiLCJpYXQiOjE2Njc3MzU5MzcsImV4cCI6MTY2OTQ2MzkzN30.z8-i0RdJ4es8GctePV7mICpnzKk08URe36Em9epT8ns";
+            
+String o = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInZlaGljbGVOdW1iZXIiOjEyMzQ1NiwidXNlck5hbWUiOiJEYW5pZWwiLCJpYXQiOjE2Njc3MzU5MzcsImV4cCI6MTY2OTQ2MzkzN30.z8-i0RdJ4es8GctePV7mICpnzKk08URe36Em9epT8ns";
             JSONObject data = new JSONObject(gdl.getData(o));
             System.out.println(data);
-            System.out.println(isTravelError(data));
+         */  // System.out.println(isTravelError(data));
             CallStoredProcedures csp = new CallStoredProcedures();
             CallStoredProcedures.begin();
-            System.out.println(csp.saveErrorInDB(data));
+           // System.out.println(csp.saveErrorInDB(data));
+           csp.bole();
             CallStoredProcedures.end();
-        } catch (InterruptedException | IOException ex) {
-            System.out.println(ex.getMessage());
-        }
+      //  } catch (InterruptedException | IOException ex) {
+            //System.out.println(ex.getMessage());
+        //}
 
     }
 

@@ -1,6 +1,7 @@
 package SaveDB;
 
 import javax.persistence.*;
+import login.SignUp;
 import org.json.JSONObject;
 
 public class CallStoredProcedures {
@@ -8,6 +9,28 @@ public class CallStoredProcedures {
     public static EntityManagerFactory factory;
     public static EntityManager entityManager;
     public static StoredProcedureQuery procedureQuery;
+
+    public void bole() {
+        Query x = entityManager.createNamedQuery("Users.findIfUserNameOREmailExists");
+        x.setParameter("userName", "yaira");
+        x.setParameter("email", "yair@gmail.com'");
+        System.out.println(x.getResultList());
+
+    }
+
+    public void isEmailExists(SignUp user) {
+        Query x = entityManager.createNamedQuery("Users.findByEmail");
+        x.setParameter("email", user.getEmail());
+        System.out.println(!x.getResultList().isEmpty());
+
+    }
+    
+    public void isUserNameExists(SignUp user) {
+        Query x = entityManager.createNamedQuery("Users.findByUserName");
+        x.setParameter("userName", user.getUserName());
+        System.out.println(!x.getResultList().isEmpty());
+
+    }
 
     public Integer saveErrorInDB(JSONObject jsonData) {
         procedureQuery = entityManager.createStoredProcedureQuery("InsertInformationInRealTime");
